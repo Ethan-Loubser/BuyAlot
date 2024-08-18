@@ -19,7 +19,7 @@ The BuyAlot application is written only for the Android OS.
 -	SQLite.Net (Visual Studio addon)
 
 4 Instructions on using the Application
-  1.	Create account
+1.	Create account
     1.1.	Upon executing the application, user will be met with the “LogInPage”. If the user does not already have an account, they must first tap on the “Create account” button.
     	
     ![image](https://github.com/user-attachments/assets/bd9bc5cf-73d0-4228-bb08-09cc482c109b)
@@ -29,7 +29,7 @@ The BuyAlot application is written only for the Android OS.
     
     ![image](https://github.com/user-attachments/assets/aa6a3373-9c2e-4b7f-a23f-23e079fe6d03)
 
-  2.	Log in
+2.	Log in
     2.1.	User can enter their created Email address and password in the “Email” and “Password” Textboxes on the “LogInPage”.
     	
     ![image](https://github.com/user-attachments/assets/be088fde-772d-4e24-ba7d-5e624cf754d7)
@@ -38,7 +38,7 @@ The BuyAlot application is written only for the Android OS.
     
     ![image](https://github.com/user-attachments/assets/6962b8b4-208d-4824-a5cf-5b98fc870436)
 
-  3.	Add product
+3.	Add product
     3.1.	On the “buyAlotHubPage”, user can click on the “Add Product” button, which will direct them to the “AddProductPage”.
     3.2.	On the “AddProductPage”, user will be presented with six textboxes, one of which are the read only “Product ID” texbox.
     3.3.	User must enter the details of the product to be added in the specified textboxes.
@@ -46,7 +46,7 @@ The BuyAlot application is written only for the Android OS.
     	
     ![image](https://github.com/user-attachments/assets/29037ae0-cee0-44cb-803b-c4a9499fc36d)
 
-  5.	View products
+5.	View products
     4.1.	On the “buyAlotHubPage”, user can click on the “View Products” button.
     	
     ![image](https://github.com/user-attachments/assets/9ab3d16b-a024-45f2-a952-d3d43f17cf0d)
@@ -97,23 +97,24 @@ The BuyAlot application is written only for the Android OS.
     
     ![image](https://github.com/user-attachments/assets/b87460c5-2038-498a-b428-d584673961db)
 
-  5.	View Cart
-    5.1.	On the “buyAlotHubPage”, user can tap on the “View Cart” button.
-    	
-    	![image](https://github.com/user-attachments/assets/39f9242e-7c15-423f-8a41-86944b17fd6c)
 
-     this will direct them to the “CartPage”, where they can view the items they have added to their cart.
+5.	View Cart
+5.1.	On the “buyAlotHubPage”, user can tap on the “View Cart” button.
+  	   	
+   ![image](https://github.com/user-attachments/assets/39f9242e-7c15-423f-8a41-86944b17fd6c)
+
+  this will direct them to the “CartPage”, where they can view the items they have added to their cart.
      
-      ![image](https://github.com/user-attachments/assets/f043f5ee-504b-4ea5-8488-8acc4265302a)
+  ![image](https://github.com/user-attachments/assets/f043f5ee-504b-4ea5-8488-8acc4265302a)
 
-    5.2.	On the “CartPage”, user can swipe products to the left to expose a “Remove” button, which can be used to remove products from the cart.
+  5.2.	On the “CartPage”, user can swipe products to the left to expose a “Remove” button, which can be used to remove products from the cart.
     
-    ![image](https://github.com/user-attachments/assets/5f990c10-e455-4967-ab76-b32b5b7ef938)
+  ![image](https://github.com/user-attachments/assets/5f990c10-e455-4967-ab76-b32b5b7ef938)
 
-  6.	Log out
+  8.	Log out
     6.1.	User can tap on the “Log out” button in the flyout menu, which will log them out and direct them back to the “LogInPage”.
     	
-    ![image](https://github.com/user-attachments/assets/4ccb845a-0259-461c-b9fa-2b4221f40846)
+  ![image](https://github.com/user-attachments/assets/4ccb845a-0259-461c-b9fa-2b4221f40846)
 
 5 Error handling
 -	Sometimes upon initial execution of the application a bug might occur where a user will be directed to the “CreateAccountPage” instead of the “buyAlotHubPage” when tapping on the “Log In” button.
