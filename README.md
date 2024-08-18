@@ -21,6 +21,7 @@ The BuyAlot application is written only for the Android OS.
 4 Instructions on using the Application
   1.	Create account
     1.1.	Upon executing the application, user will be met with the “LogInPage”. If the user does not already have an account, they must first tap on the “Create account” button.
+    	
     ![image](https://github.com/user-attachments/assets/bd9bc5cf-73d0-4228-bb08-09cc482c109b)
 
     1.2.	This will direct them to the “CreateAccountPage”, which includes six Textboxes in which the user must enter the specified details.
