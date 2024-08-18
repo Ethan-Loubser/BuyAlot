@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BuyAlot.Views.CreateAccPage"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:BuyAlot.ViewModels"
+             xmlns:model="clr-namespace:BuyAlot.Models"
+             mc:Ignorable="d"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#dedbd7">
+
+    <ContentPage.BindingContext>
+        <local:CreateAccViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout Padding="10,10,10,10" VerticalOptions="Center" BackgroundColor="#e8e6e3" Opacity="1">
+            <Image Source="buyAlotLogo2.png" VerticalOptions="Center" HeightRequest="65" Margin="0,5,0,20"/>
+            
+            <Label Text="First name:" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Center" FontAttributes="Bold" FontSize="Medium" />
+            <Entry x:Name="eCAFname" Text="{Binding Account.Fname, Mode=TwoWay}" BackgroundColor="#7c7a7a" TextColor="Snow" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="250" />
+
+            <Label Text="Last name:" TextColor="Black" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="Start" FontAttributes="Bold" />
+            <Entry x:Name="eCALname" Text="{Binding Account.Lname, Mode=TwoWay}" BackgroundColor="#7c7a7a" TextColor="Snow" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="250" />
+
+            <Label Text="Email:" TextColor="Black" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="Start" FontAttributes="Bold" />
+            <Entry x:Name="eCAEmail" Text="{Binding Account.Email, Mode=TwoWay}" BackgroundColor="#7c7a7a" TextColor="Snow" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="250" />
+
+            <Label Text="Password:" TextColor="Black" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="Start" FontAttributes="Bold" />
+            <Entry x:Name="eCAPword" Text="{Binding Account.Pword, Mode=TwoWay}" BackgroundColor="#7c7a7a" TextColor="Snow" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="250" IsPassword="True"/>
+
+            <Label Text="Phone number:" TextColor="Black" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="Start" FontAttributes="Bold" />
+            <Entry x:Name="eCAPnum" Text="{Binding Account.PhoneNum, Mode=TwoWay}" BackgroundColor="#7c7a7a" TextColor="Snow" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="250" Keyboard="Telephone" />
+
+            <Label Text="Address:" TextColor="Black" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="Start" FontAttributes="Bold" />
+            <Entry x:Name="eCAAddress" Text="{Binding Account.Address, Mode=TwoWay}" BackgroundColor="#7c7a7a" TextColor="Snow" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="250" />
+
+            <Button x:Name="btnCACreate" Margin="0,20,0,0" VerticalOptions="Center" Text="Create Account" BackgroundColor="#ff5d73" TextColor="Snow" Command="{Binding CreateAccountCommand}"/>
+            <Button x:Name="btnCABack" VerticalOptions="Center" Text="Back" BackgroundColor="#ff5d73" TextColor="Snow" Command="{Binding CABackCommand}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BuyAlot.Views.CategoriesPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackLayout BackgroundColor="#e8e6e3" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                <ContentView Padding="0,20,0,20" VerticalOptions="FillAndExpand">
+                    <Image Source="buyAlotLogo2.png" VerticalOptions="Center" HeightRequest="65" />
+                </ContentView>
+            </StackLayout>
+        </StackLayout>
+
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical">
+                <StackLayout Orientation="Horizontal" BackgroundColor="#7c7a7a" Margin="0,10,0,0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TechCat_Tapped" />
+                    </StackLayout.GestureRecognizers>
+
+                    <Image Source="techCatLogo.png"/>
+                    
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Tech" FontSize="Large" TextColor="Snow"/>
+                        <Label Text="Available items: 5" TextColor="Snow"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" BackgroundColor="#7c7a7a" Margin="0,0,0,0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="BeautyCat_Tapped" />
+                    </StackLayout.GestureRecognizers>
+                    
+                    <Image Source="BeautyCatLogo.png"/>
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Beauty" FontSize="Large" TextColor="Snow"/>
+                        <Label Text="Available items: 5" TextColor="Snow"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" BackgroundColor="#7c7a7a" Margin="0,0,0,0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="BooksCat_Tapped" />
+                    </StackLayout.GestureRecognizers>
+                    
+                    <Image Source="BooksCatLogo.png"/>
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Books" FontSize="Large" TextColor="Snow"/>
+                        <Label Text="Available items: 5" TextColor="Snow"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" BackgroundColor="#7c7a7a" Margin="0,0,0,0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GamingCat_Tapped" />
+                    </StackLayout.GestureRecognizers>
+                    
+                    <Image Source="GamingCatLogo.png"/>
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Gaming" FontSize="Large" TextColor="Snow"/>
+                        <Label Text="Available items: 5" TextColor="Snow"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" BackgroundColor="#7c7a7a" Margin="0,0,0,0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GardenCat_Tapped" />
+                    </StackLayout.GestureRecognizers>
+                    
+                    <Image Source="GardenCatLogo.png"/>
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Garden" FontSize="Large" TextColor="Snow"/>
+                        <Label Text="Available items: 5" TextColor="Snow"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" BackgroundColor="#7c7a7a" Margin="0,0,0,0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="KitchenCat_Tapped" />
+                    </StackLayout.GestureRecognizers>
+                    
+                    <Image Source="KitchenCatLogo.png"/>
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Kitchen" FontSize="Large" TextColor="Snow"/>
+                        <Label Text="Available items: 5" TextColor="Snow"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" BackgroundColor="#7c7a7a" Margin="0,0,0,0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TravelCat_Tapped" />
+                    </StackLayout.GestureRecognizers>
+                    
+                    <Image Source="TravelCatLogo.png"/>
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Travel" FontSize="Large" TextColor="Snow"/>
+                        <Label Text="Available items: 5" TextColor="Snow"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" BackgroundColor="#7c7a7a" Margin="0,0,0,0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="PetsCat_Tapped" />
+                    </StackLayout.GestureRecognizers>
+                    
+                    <Image Source="PetsCatLogo.png"/>
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Pets" FontSize="Large" TextColor="Snow"/>
+                        <Label Text="Available items: 5" TextColor="Snow"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" BackgroundColor="#7c7a7a" Margin="0,0,0,0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="HomeCat_Tapped" />
+                    </StackLayout.GestureRecognizers>
+                    
+                    <Image Source="HomeCatLogo.png"/>
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Home" FontSize="Large" TextColor="Snow"/>
+                        <Label Text="Available items: 5" TextColor="Snow"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" BackgroundColor="#7c7a7a" Margin="0,0,0,0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="MoviesCat_Tapped" />
+                    </StackLayout.GestureRecognizers>
+                    
+                    <Image Source="MoviesCatLogo.png"/>
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Movies" FontSize="Large" TextColor="Snow"/>
+                        <Label Text="Available items: 5" TextColor="Snow"/>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

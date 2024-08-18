@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BuyAlot.Views.AddProductPage"
+             xmlns:local="clr-namespace:BuyAlot.ViewModels"
+             xmlns:model="clr-namespace:BuyAlot.Models"
+             BackgroundColor="White">
+    <ContentPage.BindingContext>
+        <local:AddProductViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackLayout BackgroundColor="#dedbd7" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                    <Image Source="buyAlotLogo2.png" VerticalOptions="Center" HeightRequest="65" />
+                </ContentView>
+            </StackLayout>
+        </StackLayout>
+        
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="0,-50,0,30" Margin="0,1,0,0"  Spacing="10" BackgroundColor="White">
+                <StackLayout Orientation="Vertical" Padding="10,0,0,0" Margin="0,50,0,0" Spacing="10" BackgroundColor="#dedbd7">
+                    <Label Text="Product ID::" Margin="0,20,0,0" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Center" FontAttributes="Bold" FontSize="Medium" />
+                    <Entry x:Name="eAPProdID" Text="{Binding Product.ProdId, Mode=TwoWay}" BackgroundColor="#7c7a7a" TextColor="Snow" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="250" IsReadOnly="True"/>
+                    
+                    <Label Text="Product name::" Margin="0,20,0,0" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Center" FontAttributes="Bold" FontSize="Medium" />
+                    <Entry x:Name="eAPProdName" Text="{Binding Product.ProdName, Mode=TwoWay}" BackgroundColor="#7c7a7a" TextColor="Snow" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="250" />
+
+                    <Label Text="Product type:" TextColor="Black" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="Start" FontAttributes="Bold" />
+                    <Entry x:Name="eAPProdType" Text="{Binding Product.ProdType, Mode=TwoWay}"  BackgroundColor="#7c7a7a" TextColor="Snow" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="250" />
+
+                    <Label Text="Product price:" TextColor="Black" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="Start" FontAttributes="Bold" />
+                    <Entry x:Name="eAPProdPrice" Text="{Binding Product.ProdPrice, Mode=TwoWay}" BackgroundColor="#7c7a7a" TextColor="Snow" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="250" />
+
+                    <Label Text="Product image:" TextColor="Black" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="Start" FontAttributes="Bold" />
+                    <Entry x:Name="eAPProdImg" Text="{Binding Product.ProdImg, Mode=TwoWay}" BackgroundColor="#7c7a7a" TextColor="Snow" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="250" />
+
+                    <Label Text="Product brand:" TextColor="Black" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="Start" FontAttributes="Bold" />
+                    <Entry x:Name="eAPProdBrand" Text="{Binding Product.ProdBrand, Mode=TwoWay}" BackgroundColor="#7c7a7a" TextColor="Snow" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="250" />
+
+                    <Button x:Name="btnAPAdd" Margin="0,30,10,0" VerticalOptions="Center" Text="Add Product" BackgroundColor="#ff5d73" TextColor="Snow" Command="{Binding SaveCommand}"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

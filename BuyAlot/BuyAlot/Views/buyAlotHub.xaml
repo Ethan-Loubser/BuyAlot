@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BuyAlot.Views.AboutPage"
+             xmlns:vm="clr-namespace:BuyAlot.ViewModels"
+             xmlns:model="clr-namespace:BuyAlot.Models"
+             Title="{Binding Title}"
+             BackgroundColor="White">
+    
+    <ContentPage.BindingContext>
+        <vm:HubViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <StackLayout BackgroundColor="#e8e6e3" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                    <StackLayout Orientation="Vertical">
+                        <Image Source="buyAlotLogo2.png" VerticalOptions="Center" HeightRequest="65" />
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                            <Label x:Name="lblWelcome" Text="" FontAttributes="Bold"/>
+                        </StackLayout>
+                    </StackLayout>
+                </ContentView>
+            </StackLayout>
+        </StackLayout>
+        
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="0,0,0,0" Spacing="10" BackgroundColor="#dedbd7">
+
+                <StackLayout BackgroundColor="#dedbd7" Padding="20,20,20,20" Margin="0,5,0,5" VerticalOptions="Start" HorizontalOptions="Center" Orientation="Vertical">
+                    <Label Text="Add Product" FontAttributes="Bold" TextColor="Black" FontSize="Large" HorizontalOptions="Center" FontFamily="Bold"/>
+                    <Button BackgroundColor="#ff5d73" ImageSource="btnAddProductLogo.png" HeightRequest="260" WidthRequest="280" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,0" Command="{Binding toAddProductPage}">
+                        <Button.Resources>
+                            <Style TargetType="Button">
+                                <Setter Property="CornerRadius" Value="50"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                </StackLayout>
+                <StackLayout BackgroundColor="#dedbd7" Padding="20,20,20,20" Margin="0,5,0,5" VerticalOptions="Center" HorizontalOptions="Center" Orientation="Vertical">
+                    <Label Text="View Products" FontAttributes="Bold" TextColor="Black" FontSize="Large" HorizontalOptions="Center" FontFamily="Bold"/>
+                    <Button HeightRequest="260" ImageSource="btnViewProductsLogo.png" WidthRequest="280" Margin="0,0,0,0" BackgroundColor="#7c7a7a" Command="{Binding toProductHubPage}">
+                        <Button.Resources>
+                            <Style TargetType="Button">
+                                <Setter Property="CornerRadius" Value="50"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                </StackLayout>
+                <StackLayout BackgroundColor="#dedbd7" Padding="20,20,20,20" Margin="0,5,0,5" VerticalOptions="End" HorizontalOptions="Center" Orientation="Vertical">
+                    <Label Text="View Cart" FontAttributes="Bold" TextColor="Black" FontSize="Large" HorizontalOptions="Center" FontFamily="Bold"/>
+                    <Button HeightRequest="260" ImageSource="btnViewCartLogo.png" WidthRequest="280" Margin="0,0,0,0" BackgroundColor="#494949" Command="{Binding toCartPage}">
+                        <Button.Resources>
+                            <Style TargetType="Button">
+                                <Setter Property="CornerRadius" Value="50"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>

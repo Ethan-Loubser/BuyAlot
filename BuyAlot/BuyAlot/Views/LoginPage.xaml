@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:BuyAlot.ViewModels"
+             xmlns:model="clr-namespace:BuyAlot.Models"
+             mc:Ignorable="d"
+             x:Class="BuyAlot.Views.LoginPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#dedbd7">
+
+    <ContentPage.BindingContext>
+        <local:LoginViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout Padding="10,0,10,0" VerticalOptions="Center" BackgroundColor="#e8e6e3" Opacity="1">
+            <Image Source="buyAlotLogo2.png" VerticalOptions="Center" HeightRequest="65" Margin="0,20,0,20"/>
+            <Label Text="Email:" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Center" FontAttributes="Bold" FontSize="Medium" />
+            <Entry x:Name="eLiEmail" Text="{Binding Account.Email, Mode=TwoWay}" BackgroundColor="#494949" TextColor="Snow" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="200" Opacity="1"/>
+            <Label Text="Password:" Margin="0,10,0,0" TextColor="Black" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="Start" FontAttributes="Bold" />
+            <Entry x:Name="eLiPword" Text="{Binding Account.Pword, Mode=TwoWay}" BackgroundColor="#7c7a7a" TextColor="Snow" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="200" IsPassword="True"/>
+            <Button x:Name="btnLiLogin" Margin="0,30,0,0" VerticalOptions="Center" Text="Login" FontAttributes="Bold" BackgroundColor="#ff5d73" TextColor="Snow" Command="{Binding LoginCommand}"/>
+            <Button x:Name="btnLiCreateAcc" Margin="0,0,0,50" VerticalOptions="Center" Text="Create Account" FontAttributes="Bold" BackgroundColor="#ff5d73" TextColor="Snow" Command="{Binding CreateCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

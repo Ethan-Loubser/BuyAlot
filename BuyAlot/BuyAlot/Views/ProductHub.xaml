@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:BuyAlot.ViewModels"
+             x:Class="BuyAlot.Views.ProductHub"
+             BackgroundColor="White">
+
+    <ContentPage.BindingContext>
+        <vm:ProductHubViewModel />
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackLayout BackgroundColor="#dedbd7" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
+                <Image Source="buyAlotLogo2.png" VerticalOptions="Center" HeightRequest="65" Margin="0,5,0,0"/>
+                <Frame Padding="0" Margin="0,0,0,10">
+                    <SearchBar x:Name="SearchBar1" Placeholder="Search for product" HorizontalOptions="Center" SearchButtonPressed="SearchBar_SearchButtonPressed"/>
+                    <Frame.Resources>
+                        <Style TargetType="Frame">
+                            <Setter Property="CornerRadius" Value="50"/>
+                        </Style>
+                    </Frame.Resources>
+                </Frame>    
+            </StackLayout>
+        </StackLayout>
+        
+        
+
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical">
+                <StackLayout Orientation="Vertical" BackgroundColor="#dedbd7">
+                    <StackLayout Orientation="Horizontal" Margin="5,10,0,0">
+                        <Label Text="Hot categories" FontSize="Large" Margin="0,5,0,0" TextColor="Black"/>
+                        <Button Text="Show all" TextColor="Snow" HeightRequest="40" FontSize="Small" Margin="135,0,0,0" BackgroundColor="#ff5d73" Command="{Binding toCatList}">
+                            <Button.Resources>
+                                <Style TargetType="Button">
+                                    <Setter Property="CornerRadius" Value="50"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </StackLayout>
+
+                    <ScrollView Orientation="Horizontal" BackgroundColor="Transparent" Padding="0,20,0,10">
+                        <StackLayout Orientation="Horizontal">
+                            <StackLayout Orientation="Vertical">
+                                <Button Margin="10,0,0,0" WidthRequest="130" HeightRequest="120" ImageSource="TechCatLogo.png" BackgroundColor="#494949" Padding="0,-10,0,-10" Command="{Binding HotTech}"/>
+                                <Label Text="Tech" TextColor="Black" HorizontalOptions="Center" Margin="10,0,0,0"/>
+                            </StackLayout>
+
+                            <StackLayout Orientation="Vertical">
+                                <Button Margin="10,0,0,0" WidthRequest="130" HeightRequest="120" ImageSource="BeautyCatLogo.png" BackgroundColor="#494949" Command="{Binding HotBeauty}"/>
+                                <Label Text="Beauty" TextColor="Black" HorizontalOptions="Center" Margin="10,0,0,0"/>
+                            </StackLayout>
+
+                            <StackLayout Orientation="Vertical">
+                                <Button Margin="10,0,0,0" WidthRequest="130" HeightRequest="120" ImageSource="BooksCatLogo.png" BackgroundColor="#494949" Command="{Binding HotBooks}"/>
+                                <Label Text="Books" TextColor="Black" HorizontalOptions="Center" Margin="10,0,0,0"/>
+                            </StackLayout>
+
+                            <StackLayout Orientation="Vertical">
+                                <Button Margin="10,0,0,0" WidthRequest="130" HeightRequest="120" ImageSource="GamingCatLogo.png" BackgroundColor="#494949" Command="{Binding HotGaming}"/>
+                                <Label Text="Gaming" TextColor="Black" HorizontalOptions="Center" Margin="10,0,0,0"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ScrollView>
+                </StackLayout>
+
+
+
+                <StackLayout Orientation="Vertical" BackgroundColor="#dedbd7">
+                    <StackLayout Orientation="Horizontal" Margin="5,10,0,0">
+                        <Label Text="Recommended for you" TextColor="Black" FontSize="Large" Margin="0,5,0,0"/>
+                    </StackLayout>
+
+                    <ScrollView Orientation="Horizontal" BackgroundColor="Transparent" Padding="10,20,0,10">
+                        <StackLayout Orientation="Horizontal">
+                            <StackLayout Padding="15,20,15,0" Orientation="Vertical" BackgroundColor="#7c7a7a">
+                                <Button Margin="10,0,10,30" WidthRequest="130" HeightRequest="120" ImageSource="SamsungS21ProdLogo.png" BackgroundColor="#494949" Padding="0,10,0,-10" Command="{Binding prod1}"/>
+                                <Label Text="Samsung S21" TextColor="Snow" FontSize="Medium" HorizontalOptions="Center" Margin="10,0,0,0"/>
+                                <Label Text="R 14,999" TextColor="Snow" FontSize="Medium" HorizontalOptions="Center" Margin="10,0,0,0"/>
+                            </StackLayout>
+
+                            <StackLayout Padding="15,20,15,0" Orientation="Vertical" BackgroundColor="#7c7a7a">
+                                <Button Margin="10,0,10,30" WidthRequest="130" HeightRequest="120" ImageSource="LifeOfPiProdLogo.png" BackgroundColor="#494949" Padding="0,10,0,-10" Command="{Binding prod2}"/>
+                                <Label Text="Life of Pi" TextColor="Snow" FontSize="Medium" HorizontalOptions="Center" Margin="10,0,0,0"/>
+                                <Label Text="R 197" TextColor="Snow" FontSize="Medium" HorizontalOptions="Center" Margin="10,0,0,0"/>
+                            </StackLayout>
+
+                            <StackLayout Padding="15,20,15,0" Orientation="Vertical" BackgroundColor="#7c7a7a">
+                                <Button Margin="10,0,10,30" WidthRequest="130" HeightRequest="120" ImageSource="Ps5ProdLogo.png" BackgroundColor="#494949" Padding="0,10,0,-10" Command="{Binding prod3}"/>
+                                <Label Text="Playstation 5" TextColor="Snow" FontSize="Medium" HorizontalOptions="Center" Margin="10,0,0,0"/>
+                                <Label Text="R 13,499" TextColor="Snow" FontSize="Medium" HorizontalOptions="Center" Margin="10,0,0,0"/>
+                            </StackLayout>
+
+                            <StackLayout Padding="15,20,15,0" Orientation="Vertical" BackgroundColor="#7c7a7a">
+                                <Button Margin="10,0,10,30" WidthRequest="130" HeightRequest="120" ImageSource="Ps5ControlProdLogo.png" BackgroundColor="#494949" Padding="0,10,0,-10" Command="{Binding prod4}"/>
+                                <Label Text="Playstation 5 Remote" TextColor="Snow" FontSize="Medium" HorizontalOptions="Center" Margin="10,0,0,0"/>
+                                <Label Text="R 14,999" TextColor="Snow" FontSize="Medium" HorizontalOptions="Center" Margin="10,0,0,0"/>
+                            </StackLayout>
+                            
+                            
+                        </StackLayout>
+                    </ScrollView>
+                </StackLayout>
+
+
+
+                <StackLayout Orientation="Vertical" BackgroundColor="#dedbd7">
+                    <StackLayout Orientation="Horizontal" Margin="5,10,0,0">
+                        <Label Text="Red block sale" TextColor="Black" FontSize="Large" Margin="0,5,0,0"/>
+                    </StackLayout>
+
+                    <ScrollView Orientation="Horizontal" BackgroundColor="Transparent" Padding="10,20,0,10">
+                        <StackLayout Orientation="Horizontal">
+                            <StackLayout Padding="15,20,15,0" Orientation="Vertical" BackgroundColor="#7c7a7a">
+                                <Button Margin="10,0,10,30" WidthRequest="130" HeightRequest="120" ImageSource="KnivesProdLogo.png" BackgroundColor="#494949" Padding="0,10,0,-10" Command="{Binding prod5}"/>
+                                <Label Text="Knives set" TextColor="Snow" FontSize="Medium" HorizontalOptions="Center" Margin="10,0,0,0"/>
+                                <Label Text="R 124" TextColor="Snow" FontSize="Medium" HorizontalOptions="Center" Margin="10,0,0,0"/>
+                            </StackLayout>
+
+                            <StackLayout Padding="15,20,15,0" Orientation="Vertical" BackgroundColor="#7c7a7a">
+                                <Button Margin="10,0,10,30" WidthRequest="130" HeightRequest="120" ImageSource="MakeUpProdLogo.png" BackgroundColor="#494949" Padding="0,10,0,-10" Command="{Binding prod6}"/>
+                                <Label Text="Make Up kit" TextColor="Snow" FontSize="Medium" HorizontalOptions="Center" Margin="10,0,0,0"/>
+                                <Label Text="R 370" TextColor="Snow" FontSize="Medium" HorizontalOptions="Center" Margin="10,0,0,0"/>
+                            </StackLayout>
+
+                            <StackLayout Padding="15,20,15,0" Orientation="Vertical" BackgroundColor="#7c7a7a">
+                                <Button Margin="10,0,10,30" WidthRequest="130" HeightRequest="120" ImageSource="SamsungWatchProdLogo.png" BackgroundColor="#494949" Padding="0,10,0,-10" Command="{Binding prod7}"/>
+                                <Label Text="Samsung Watch 4" TextColor="Snow" FontSize="Medium" HorizontalOptions="Center" Margin="10,0,0,0"/>
+                                <Label Text="R 2,899" TextColor="Snow" FontSize="Medium" HorizontalOptions="Center" Margin="10,0,0,0"/>
+                            </StackLayout>
+
+                            <StackLayout Padding="15,20,15,0" Orientation="Vertical" BackgroundColor="#7c7a7a">
+                                <Button Margin="10,0,10,30" WidthRequest="130" HeightRequest="120" ImageSource="GoTProdLogo.png" BackgroundColor="#494949" Padding="0,10,0,-10" Command="{Binding prod8}"/>
+                                <Label Text="GOT box set" TextColor="Snow" FontSize="Medium" HorizontalOptions="Center" Margin="10,0,0,0"/>
+                                <Label Text="R 1,199" TextColor="Snow" FontSize="Medium" HorizontalOptions="Center" Margin="10,0,0,0"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ScrollView>
+                </StackLayout>
+
+
+
+                <StackLayout Orientation="Vertical" BackgroundColor="#dedbd7">
+                    <StackLayout Orientation="Horizontal" Margin="5,10,0,0">
+                        <Label Text="While stock lasts" TextColor="Black" FontSize="Large" Margin="0,5,0,0"/>
+                    </StackLayout>
+
+                    <ScrollView Orientation="Horizontal" BackgroundColor="Transparent" Padding="10,20,0,10">
+                        <StackLayout Orientation="Horizontal">
+                            <StackLayout Padding="15,20,15,0" Orientation="Vertical" BackgroundColor="#7c7a7a">
+                                <Button Margin="10,0,10,30" WidthRequest="130" HeightRequest="120" ImageSource="CupProdLogo.png" BackgroundColor="#494949" Padding="0,10,0,-10" Command="{Binding prod9}"/>
+                                <Label Text="Melamine cup" TextColor="Snow" FontSize="Medium" HorizontalOptions="Center" Margin="10,0,0,0"/>
+                                <Label Text="R 50" TextColor="Snow" FontSize="Medium" HorizontalOptions="Center" Margin="10,0,0,0"/>
+                            </StackLayout>
+
+                            <StackLayout Padding="15,20,15,0" Orientation="Vertical" BackgroundColor="#7c7a7a">
+                                <Button Margin="10,0,10,30" WidthRequest="130" HeightRequest="120" ImageSource="ShrekProdLogo.png" BackgroundColor="#494949" Padding="0,10,0,-10" Command="{Binding prod10}"/>
+                                <Label Text="Shrek 2 (DVD)" TextColor="Snow" FontSize="Medium" HorizontalOptions="Center" Margin="10,0,0,0"/>
+                                <Label Text="R 150" TextColor="Snow" FontSize="Medium" HorizontalOptions="Center" Margin="10,0,0,0"/>
+                            </StackLayout>
+
+                            <StackLayout Padding="15,20,15,0" Orientation="Vertical" BackgroundColor="#7c7a7a">
+                                <Button Margin="10,0,10,30" WidthRequest="130" HeightRequest="120" ImageSource="FuryProdLogo.png" BackgroundColor="#494949" Padding="0,10,0,-10" Command="{Binding prod11}"/>
+                                <Label Text="Fury (DVD)" TextColor="Snow" FontSize="Medium" HorizontalOptions="Center" Margin="10,0,0,0"/>
+                                <Label Text="R 214" TextColor="Snow" FontSize="Medium" HorizontalOptions="Center" Margin="10,0,0,0"/>
+                            </StackLayout>
+
+                            <StackLayout Padding="15,20,15,0" Orientation="Vertical" BackgroundColor="#7c7a7a">
+                                <Button Margin="10,0,10,30" WidthRequest="130" HeightRequest="120" ImageSource="PaintingProdLogo.png" BackgroundColor="#494949" Padding="0,10,0,-10" Command="{Binding prod12}"/>
+                                <Label Text="Painting 90x90" TextColor="Snow" FontSize="Medium" HorizontalOptions="Center" Margin="10,0,0,0"/>
+                                <Label Text="R 250" TextColor="Snow" FontSize="Medium" HorizontalOptions="Center" Margin="10,0,0,0"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ScrollView>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

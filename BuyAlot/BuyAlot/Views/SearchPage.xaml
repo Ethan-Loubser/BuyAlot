@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BuyAlot.Views.SearchPage"
+             xmlns:local="clr-namespace:BuyAlot.ViewModels"
+             xmlns:model="clr-namespace:BuyAlot.Models">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <StackLayout BackgroundColor="#dedbd7" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
+                <Image Source="buyAlotLogo2.png" VerticalOptions="Center" HeightRequest="65" Margin="0,5,0,0"/>
+                <Frame Padding="0" Margin="0,0,0,10">
+                    <SearchBar x:Name="SearchBar1" Placeholder="Search for product" HorizontalOptions="Center" TextChanged="SearchBar1_TextChanged" />
+                    <Frame.Resources>
+                        <Style TargetType="Frame">
+                            <Setter Property="CornerRadius" Value="50"/>
+                        </Style>
+                    </Frame.Resources>
+                </Frame>
+            </StackLayout>
+        </StackLayout>
+
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" BackgroundColor="#e8e6e3">
+                <RefreshView x:DataType="local:SearchPageViewModel" Command="{Binding LoadSearchProdCommand}" IsRefreshing="{Binding IsBusy, Mode=OneWay}">
+                    <CollectionView ItemsSource="{Binding Products}" SelectionMode="None" >
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout x:DataType="model:Product" >
+                                    <SwipeView>
+                                        <SwipeView.RightItems>
+                                            <SwipeItems>
+                                                <SwipeItem Text="Delete" BackgroundColor="#ff5d73" Command="{Binding Source={RelativeSource AncestorType={x:Type local:CatProductsViewModel}}, Path=ProductTappedDelete}" CommandParameter="{Binding .}"/>
+                                            </SwipeItems>
+                                        </SwipeView.RightItems>
+
+                                        <Grid Padding="5" BackgroundColor="#e8e6e3">
+                                            <Frame CornerRadius="10" HasShadow="True">
+                                                <StackLayout Orientation="Horizontal">
+
+                                                    <StackLayout.GestureRecognizers>
+                                                        <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Source={RelativeSource AncestorType={x:Type local:SearchPageViewModel}}, Path=ProductTapped}" CommandParameter="{Binding .}"/>
+                                                    </StackLayout.GestureRecognizers>
+
+                                                    <Image Grid.RowSpan="2" Source="{Binding ProdImg}"/>
+
+                                                    <StackLayout>
+                                                        <Label Grid.Column="1" Text="{Binding ProdName}" FontAttributes="Bold" FontSize="Large"/>
+                                                        <Label Grid.Column="1" Text="{Binding ProdPrice}" FontAttributes="Bold"/>
+                                                        <Label Grid.Row="1" Grid.Column="1" Text="{Binding ProdBrand}" FontAttributes="Bold"/>
+                                                    </StackLayout>
+
+                                                    <StackLayout VerticalOptions="Start" HorizontalOptions="EndAndExpand">
+                                                        <Image Source="EditBtn.png" Grid.Column="3" WidthRequest="25" HeightRequest="30" VerticalOptions="Start" HorizontalOptions="EndAndExpand">
+                                                            <Image.GestureRecognizers>
+                                                                <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Source={RelativeSource AncestorType={x:Type local:SearchPageViewModel}}, Path=ProductTappedEdit}" CommandParameter="{Binding .}"/>
+                                                            </Image.GestureRecognizers>
+                                                        </Image>
+                                                    </StackLayout>
+
+                                                </StackLayout>
+                                            </Frame>
+                                        </Grid>
+                                    </SwipeView>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                        <CollectionView.Header>
+                            <StackLayout>
+                                <Label Text="Products" FontSize="Large" TextColor="Black" HorizontalOptions="Center" />
+                            </StackLayout>
+                        </CollectionView.Header>
+                    </CollectionView>
+                </RefreshView>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

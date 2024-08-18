@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:BuyAlot.ViewModels" xmlns:model="clr-namespace:BuyAlot.Models"
+             x:Class="BuyAlot.Views.CartPage">
+    
+    
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackLayout BackgroundColor="#e8e6e3" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                <ContentView Padding="0,20,0,20" VerticalOptions="FillAndExpand">
+                    <Image Source="buyAlotLogo2.png" VerticalOptions="Center" HeightRequest="65" />
+                </ContentView>
+            </StackLayout>
+        </StackLayout>
+
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" BackgroundColor="#e8e6e3">
+                <RefreshView x:DataType="local:CartViewModel" Command="{Binding LoadCartCommand}" IsRefreshing="{Binding IsBusy, Mode=OneWay}">
+                    <CollectionView ItemsSource="{Binding CartProds}" SelectionMode="None">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout x:DataType="model:Cartt">
+                                    <SwipeView>
+                                        <SwipeView.RightItems>
+                                            <SwipeItems>
+                                                <SwipeItem Text="Remove"  BackgroundColor="#ff5d73" Command="{Binding Source={RelativeSource AncestorType={x:Type local:CartViewModel}}, Path=CProdTappedDelete}" CommandParameter="{Binding .}"/>
+                                            </SwipeItems>
+                                        </SwipeView.RightItems>
+
+                                        <Grid Padding="5" BackgroundColor="#e8e6e3">
+                                            <Frame CornerRadius="10" HasShadow="True">
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Image Grid.RowSpan="2" Source="{Binding CProdImg}" />
+                                                    <StackLayout>
+                                                        <Label Grid.Column="1" Text="{Binding CProdName}" FontAttributes="Bold" FontSize="Large"/>
+                                                        <Label Grid.Column="1" Text="{Binding CProdPrice}" FontAttributes="Bold" />
+                                                        <Label Grid.Row="1" Grid.Column="1" Text="{Binding CProdBrand}" FontAttributes="Bold" />
+                                                    </StackLayout>
+                                                </StackLayout>
+                                            </Frame>
+                                        </Grid>
+                                    </SwipeView>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </RefreshView>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
