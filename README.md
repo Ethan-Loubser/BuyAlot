@@ -4,8 +4,6 @@ INDEX
 3.	Types and versions of programs used
 4.	Instructions on using the application
 5.	Error handling
-6.	Bibliography
-7.	Sample data
 
 1 App description
 BuyAlot is an e-commerce application on which users can buy or add various products.
