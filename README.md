@@ -1,24 +1,24 @@
-INDEX
+**INDEX**
 1.	App description
 2.	Instructions on Operating system
 3.	Types and versions of programs used
 4.	Instructions on using the application
 5.	Error handling
 
-1 App description
+**1 App description**
 BuyAlot is an e-commerce application on which users can buy or add various products.
 
-2 Operating System
+**2 Operating System**
 The BuyAlot application is written only for the Android OS.
 
-3 Types and versions of programs used
+**3 Types and versions of programs used**
 -	Emulator used = Pixel 5 – API 33 (Android 13.0 – API 33)
 -	Visual Studio 2022
 -	Adobe Photoshop 2020
 -	SQLite (Visual Studio addon)
 -	SQLite.Net (Visual Studio addon)
 
-4 Instructions on using the Application
+**4 Instructions on using the Application**
 1.	Create account
     1.1.	Upon executing the application, user will be met with the “LogInPage”. If the user does not already have an account, they must first tap on the “Create account” button.
     	
@@ -116,7 +116,7 @@ The BuyAlot application is written only for the Android OS.
     	
   ![image](https://github.com/user-attachments/assets/4ccb845a-0259-461c-b9fa-2b4221f40846)
 
-5 Error handling
+**5 Error handling**
 -	Sometimes upon initial execution of the application a bug might occur where a user will be directed to the “CreateAccountPage” instead of the “buyAlotHubPage” when tapping on the “Log In” button.
 The fix for this bug, is to stop debugging and then restart it.
 
